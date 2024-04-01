@@ -1,2 +1,91 @@
-[{"id":1,"tittle":"Iphone","description":"ProMax","price":1500,"thumbnail":"htpps:/img1.com","code":"j22","stock":130},{"id":2,"tittle":"Notbook","description":"Apple","price":2500,"thumbnail":"htpps:/img2.com","code":"s28","stock":75},{"id":3,"tittle":"Notbook","description":"Apple","price":2500,"thumbnail":"htpps:/img2.com","code":"s55","stock":75},
-{"id":4,"tittle":"Iphone","description":"ProMax2","price":3500,"thumbnail":"htpps:/img4.com","code":"j23","stock":150},{"id":5,"tittle":"Notbook","description":"Apple3","price":4500,"thumbnail":"htpps:/img5.com","code":"f28","stock":25},{"id":6,"tittle":"Notbook","description":"Apple5","price":2800,"thumbnail":"htpps:/img6.com","code":"s27","stock":15}]
+[
+    {
+        "id": 1,
+        "tittle": "Iphone",
+        "description": "ProMax",
+        "price": 1500,
+        "thumbnail": "htpps:/img1.com",
+        "code": "j22",
+        "stock": 130
+    },
+    {
+        "id": 2,
+        "tittle": "Notbook",
+        "description": "Apple",
+        "price": 2500,
+        "thumbnail": "htpps:/img2.com",
+        "code": "s28",
+        "stock": 75
+    },
+    {
+        "id": 3,
+        "tittle": "Notbook",
+        "description": "Apple",
+        "price": 2500,
+        "thumbnail": "htpps:/img2.com",
+        "code": "s55",
+        "stock": 75
+    },
+    {
+        "id": 4,
+        "tittle": "Iphone",
+        "description": "ProMax2",
+        "price": 3500,
+        "thumbnail": "htpps:/img4.com",
+        "code": "j23",
+        "stock": 150
+    },
+    {
+        "id": 6,
+        "tittle": "Notbook",
+        "description": "Apple5",
+        "price": 2800,
+        "thumbnail": "htpps:/img6.com",
+        "code": "s27",
+        "stock": 15
+    },
+    {
+        "id": 7,
+        "title": "Nombre del producto",
+        "description": "Descripción del producto",
+        "price": 100.5,
+        "thumbnail": [],
+        "code": "ABC123",
+        "stock": 10,
+        "category": "Electrónica",
+        "status": true
+    },
+    {
+        "id": 8,
+        "title": "Prod",
+        "description": "Description1",
+        "price": 100.5,
+        "thumbnail": [],
+        "code": "ABC122",
+        "stock": 10,
+        "category": "Electrónica",
+        "status": true
+    },
+    {
+        "id": 9,
+        "title": "Prod2",
+        "description": "Description1",
+        "price": 100.5,
+        "thumbnail": [],
+        "code": "ABB122",
+        "stock": 10,
+        "category": "Electrónica",
+        "status": true
+    },
+    {
+        "id": 10,
+        "title": "Prod6",
+        "description": "Description4",
+        "price": 100.5,
+        "thumbnail": [],
+        "code": "ABB937",
+        "stock": 20,
+        "category": "Electrónica",
+        "status": true
+    }
+]
