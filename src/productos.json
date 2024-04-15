@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "tittle": "Iphone",
+        "title": "Iphone",
         "description": "ProMax",
         "price": 1500,
         "thumbnail": "htpps:/img1.com",
@@ -10,7 +10,7 @@
     },
     {
         "id": 2,
-        "tittle": "Notbook",
+        "title": "Notbook",
         "description": "Apple",
         "price": 2500,
         "thumbnail": "htpps:/img2.com",
@@ -19,7 +19,7 @@
     },
     {
         "id": 3,
-        "tittle": "Notbook",
+        "title": "Notbook",
         "description": "Apple",
         "price": 2500,
         "thumbnail": "htpps:/img2.com",
@@ -28,7 +28,7 @@
     },
     {
         "id": 4,
-        "tittle": "Iphone",
+        "title": "Iphone",
         "description": "ProMax2",
         "price": 3500,
         "thumbnail": "htpps:/img4.com",
@@ -37,7 +37,7 @@
     },
     {
         "id": 6,
-        "tittle": "Notbook",
+        "title": "Notbook",
         "description": "Apple5",
         "price": 2800,
         "thumbnail": "htpps:/img6.com",

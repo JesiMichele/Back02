@@ -33,7 +33,7 @@ class ProductManager {
         }
     }
 
-    addProduct(title, description, price, thumbnail = [], code, stock, category, status = true) {
+    addProduct({title, description, price, thumbnail = [], code, stock, category, status = true}) {
 
         let result = 'Ha ocurrido un error';
 
