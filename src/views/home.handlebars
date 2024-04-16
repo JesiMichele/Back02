@@ -1,3 +1,4 @@
+{{!--motor de plantilla de Handlebars--}}
 <div>
     <h1>hola {{name}}</h1>
 
@@ -6,7 +7,7 @@
     <table>
         <thead>
             <tr>
-                
+
                 <th>id</th>
                 <th>title</th>
                 <th>description</th>
@@ -30,13 +31,13 @@
                 <td>{{this.description}}</td>
                 <td>{{this.price}}</td>
 
-                 <td>
-                    
+                <td>
+
                     {{#if this.thumbnail.length}}
                     <a href="{{this.thumbnail.[0]}}" target="_blank">{{this.thumbnail.[0]}}</a>
                     {{else}}
                     No hay imagen del Prod.
-                    
+
                     {{/if}}
                 </td>
                 <td>{{this.code}}</td>
@@ -51,7 +52,7 @@
                     {{/if}}
                 </td>
 
-               
+
 
             </tr>
 

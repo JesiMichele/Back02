@@ -1,14 +1,8 @@
-
-
-
 import { Router } from "express";
 import ProductManager from '../ProductManager.js'
 
 
 const router = Router();
-
-
-
 
 //Ruta products con query limit
 router.get("/", async (req, res) => {
@@ -50,7 +44,7 @@ router.get("/:pid", async (req, res) => {
 
 router.post("/", (req, res) => {
     const p = new ProductManager();
-    const result = p.addProduct({...req.body});
+    const result = p.addProduct({ ...req.body });
     return res.json({ result });
 })
 

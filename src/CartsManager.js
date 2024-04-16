@@ -5,7 +5,7 @@ import ProductManager from './ProductManager.js';
 class CartsManager {
     #carts;
     #path
-    static idProducto = 0;
+
 
 
     constructor() {
@@ -52,34 +52,7 @@ class CartsManager {
             console.log(`Error al guardar el archivo, ${error}`);
         }
     }
-    /*addProductCart(cid, pid){
-         
-         let result=`El id ${cid} no existe`;
-         const indexCart= this.#carts.findIndex(c=>c.id===cid);
-    
-         if(indexCart!== -1){
-            const indexProdCart= this.#carts[indexCart].products.findIndex(p=>p.id===pid)
-            const product= new ProductManager();
-            const p= product.getCartById(pid);
-    
-            if(p.status && indexProdCart=== -1){
-    
-                this.#carts[indexCart].products.push({ id: pid,'quantity': 1})
-                this.guardarArchivo();
-                result= 'Producto agregado al carrito exitosamente!';
-            } else if(p.status && indexProdCart !== -1){
-    
-                ++this.#carts[indexCart].products[indexProdCart].quantity;
-                this.guardarArchivo();
-                result= 'Producto agregado al carrito exitosamente!';
-        
-            }else if(!p.status){
-                result=`El producto con id ${pid} no existe`
-            }
-        
-        }
-         return result;
-    }*/
+
     addProductCart(cid, pid) {
         let result = `El id ${cid} no existe`;
         const indexCart = this.#carts.findIndex(c => c.id === cid);

@@ -5,7 +5,7 @@ import fs from 'fs';
 class ProductManager {
     #products;
     #path
-    static idProducto = 0;
+
 
 
     constructor() {
@@ -33,7 +33,7 @@ class ProductManager {
         }
     }
 
-    addProduct({title, description, price, thumbnail = [], code, stock, category, status = true}) {
+    addProduct({ title, description, price, thumbnail = [], code, stock, category, status = true }) {
 
         let result = 'Ha ocurrido un error';
 
@@ -47,7 +47,7 @@ class ProductManager {
                 result = `El codigo ${code}ya existe`
 
             else {
-                ProductManager.idProducto = ProductManager.idProducto + 1;
+
 
                 const id = this.definirIdProducto();
 
