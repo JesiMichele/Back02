@@ -1,1 +1,135 @@
-[{"id":1,"title":"Iphone","description":"ProMax","price":1500,"thumbnail":"htpps:/img1.com","code":"j22","stock":130},{"id":2,"title":"Notbook","description":"Apple","price":2500,"thumbnail":"htpps:/img2.com","code":"s28","stock":75},{"id":3,"title":"Notbook","description":"Apple","price":2500,"thumbnail":"htpps:/img2.com","code":"s55","stock":75},{"id":4,"title":"Iphone","description":"ProMax2","price":3500,"thumbnail":"htpps:/img4.com","code":"j23","stock":150},{"id":6,"title":"Notbook","description":"Apple5","price":2800,"thumbnail":"htpps:/img6.com","code":"s27","stock":15},{"id":7,"title":"Nombre del producto","description":"Descripción del producto","price":100.5,"thumbnail":[],"code":"ABC123","stock":10,"category":"Electrónica","status":true},{"id":8,"title":"Prod","description":"Description1","price":100.5,"thumbnail":[],"code":"ABC122","stock":10,"category":"Electrónica","status":true},{"id":9,"title":"Prod2","description":"Description1","price":100.5,"thumbnail":[],"code":"ABB122","stock":10,"category":"Electrónica","status":true},{"id":10,"title":"Prod6","description":"Description4","price":100.5,"thumbnail":[],"code":"ABB937","stock":20,"category":"Electrónica","status":true},{"id":11,"title":"1","description":"1","price":"1","thumbnail":[],"code":"11","stock":"11","category":"1","status":true},{"id":12,"title":"2","description":"2","price":"1","thumbnail":[],"code":"18","stock":"11","category":"1","status":true},{"id":13,"title":"Prod09","description":"Description9","price":100.5,"thumbnail":[],"code":"ABB945","stock":20,"category":"Electrónica","status":true},{"id":14,"title":"promax","description":"celular","price":"1234","thumbnail":[],"code":"10","stock":"17","category":"electronica","status":true}]
+[
+    {
+        "id": 1,
+        "title": "Iphone",
+        "description": "ProMax",
+        "price": 1500,
+        "thumbnail": "htpps:/img1.com",
+        "code": "j22",
+        "stock": 130
+    },
+    {
+        "id": 2,
+        "title": "Notbook",
+        "description": "Apple",
+        "price": 2500,
+        "thumbnail": "htpps:/img2.com",
+        "code": "s28",
+        "stock": 75
+    },
+    {
+        "id": 3,
+        "title": "Notbook",
+        "description": "Apple",
+        "price": 2500,
+        "thumbnail": "htpps:/img2.com",
+        "code": "s55",
+        "stock": 75
+    },
+    {
+        "id": 4,
+        "title": "Iphone",
+        "description": "ProMax2",
+        "price": 3500,
+        "thumbnail": "htpps:/img4.com",
+        "code": "j23",
+        "stock": 150
+    },
+    {
+        "id": 6,
+        "title": "Notbook",
+        "description": "Apple5",
+        "price": 2800,
+        "thumbnail": "htpps:/img6.com",
+        "code": "s27",
+        "stock": 15
+    },
+    {
+        "id": 7,
+        "title": "Nombre del producto",
+        "description": "Descripción del producto",
+        "price": 100.5,
+        "thumbnail": [],
+        "code": "ABC123",
+        "stock": 10,
+        "category": "Electrónica",
+        "status": true
+    },
+    {
+        "id": 8,
+        "title": "Prod",
+        "description": "Description1",
+        "price": 100.5,
+        "thumbnail": [],
+        "code": "ABC122",
+        "stock": 10,
+        "category": "Electrónica",
+        "status": true
+    },
+    {
+        "id": 9,
+        "title": "Prod2",
+        "description": "Description1",
+        "price": 100.5,
+        "thumbnail": [],
+        "code": "ABB122",
+        "stock": 10,
+        "category": "Electrónica",
+        "status": true
+    },
+    {
+        "id": 10,
+        "title": "Prod6",
+        "description": "Description4",
+        "price": 100.5,
+        "thumbnail": [],
+        "code": "ABB937",
+        "stock": 20,
+        "category": "Electrónica",
+        "status": true
+    },
+    {
+        "id": 11,
+        "title": "1",
+        "description": "1",
+        "price": "1",
+        "thumbnail": [],
+        "code": "11",
+        "stock": "11",
+        "category": "1",
+        "status": true
+    },
+    {
+        "id": 12,
+        "title": "2",
+        "description": "2",
+        "price": "1",
+        "thumbnail": [],
+        "code": "18",
+        "stock": "11",
+        "category": "1",
+        "status": true
+    },
+    {
+        "id": 13,
+        "title": "Prod09",
+        "description": "Description9",
+        "price": 100.5,
+        "thumbnail": [],
+        "code": "ABB945",
+        "stock": 20,
+        "category": "Electrónica",
+        "status": true
+    },
+    {
+        "id": 14,
+        "title": "promax",
+        "description": "celular",
+        "price": "1234",
+        "thumbnail": [],
+        "code": "10",
+        "stock": "17",
+        "category": "electronica",
+        "status": true
+    }
+]

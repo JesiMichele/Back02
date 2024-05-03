@@ -1,12 +1,13 @@
 import express from 'express'
-import ProductManager from '../ProductManager.js';
+import { productModel } from '../dao/models/products.js';
+
 
 const router = express.Router();
 
 //ruta Get que renderiza la vista "home" y pasa la lista de productos(obtenidas por GetProduct de ProductManager)
-router.get('/', (req, res) => {
-    const p = new ProductManager();
-    const productos = p.getProduct();
+router.get('/', async (req, res) => {
+   
+    const productos = productModel.find();
     return res.render('home', { productos })
 })
 

@@ -1,67 +1,25 @@
 import { Router } from "express";
-import ProductManager from '../ProductManager.js'
+import { addProduct, deleteProduct, getProductById, getProducts, updateProduct } from "../controllers/products.js";
+//import ProductManager from '../ProductManager.js'
 
 
 const router = Router();
 
 //Ruta products con query limit
-router.get("/", async (req, res) => {
-
-    try {
-        const { limit } = req.query;
-
-        const prod = new ProductManager();
-        const productos = await prod.getProduct(limit)
-
-        return res.json({ productos })
-    } catch (error) {
-        console.error("Error al obtener productos:", error);
-        return res.status(500).json({ mensaje: "Error interno del servidor" });
-    }
-
-})
+router.get('/', getProducts);
 
 
 //Ruta products con id especifico
-router.get("/:pid", async (req, res) => {
+router.get("/:pid", getProductById);
 
-    try {
-        const { pid } = req.params;
-        const prod = new ProductManager();
-        const producto = await prod.getProductById(pid);
+//Agregar producto
+router.post("/", addProduct);
 
-        if (producto !== "Not Found") {
-            return res.json({ producto });
-        } else {
-            return res.status(404).json({ mensaje: "Producto no encontrado" });
-        }
-    } catch (error) {
-        console.error("Error al obtener producto por ID:", error);
-        return res.status(500).json({ mensaje: "Error interno del servidor" });
-    }
+//Actualizar producto
+router.put("/:pid", updateProduct);
 
-});
-
-router.post("/", (req, res) => {
-    const p = new ProductManager();
-    const result = p.addProduct({ ...req.body });
-    return res.json({ result });
-})
-
-
-router.put("/:pid", (req, res) => {
-    const { pid } = req.params;
-    const prod = new ProductManager();
-    const result = prod.updateProduct(Number(pid), req.body)
-    return res.json({ result });
-})
-
-router.delete("/:pid", (req, res) => {
-    const { pid } = req.params;
-    const p = new ProductManager();
-    const result = p.deleteProduct(Number(pid));
-    return res.json({ result });
-})
+//Eliminar producto
+router.delete("/:pid", deleteProduct);
 
 
 

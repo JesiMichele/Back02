@@ -5,14 +5,15 @@ import { Server } from 'socket.io';
 import prodRouter from "./routers/products.js"
 import cartsRouter from "./routers/carts.js"
 import views from './routers/views.routes.js'
-import ProductManager from "./ProductManager.js";
+
+import { dbConecction } from "../database/config.js";
+import { productModel } from "./dao/models/products.js";
 
 
 const app = express();
 const PORT = 8080;
-const p = new ProductManager();
-const httpServer = app.listen(PORT, () => console.log('listenning puerto 8080'))
-const SocketServer = new Server(httpServer);
+
+
 
 
 app.use(express.json());
@@ -24,21 +25,36 @@ app.engine('handlebars', engine());
 app.set('views', __dirname + '/views');
 app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
+
 app.use('/', views)
+app.use('/api/products', prodRouter);
+app.use('/api/carts', cartsRouter);
+await dbConecction();
+
+const httpServer = app.listen(PORT, () => console.log('listenning puerto 8080'))
+const io = new Server(httpServer);
+
+
+
+
 //Servidor con Socket
 //Cliente se conecta-se obtiene la lista de productos
-SocketServer.on('connection', socket => {
+io.on('connection', async (socket) => {
 
-//evento productos- envia la lista del paso previo
-    const productos = p.getProduct();
+    //evento productos- envia la lista del paso previo
+    const productos = await productModel.find();
     socket.emit('productos', productos);
 
-    
-//el Servidor espera el evento para agregar el producto solicitado por el cliente
+
+    //el Servidor espera el evento para agregar el producto solicitado por el cliente
     socket.on('agregarProducto', producto => {
-        const result = p.addProduct(producto)
-        if (result.producto)
-            socket.emit('productos', result.productos)
+        const newProduct = productModel.create({ ...producto })
+        if (newProduct) {
+            productos.push(newProduct)
+            socket.emit('productos', productos)
+
+        }
+
     })
 })
 
@@ -46,9 +62,6 @@ SocketServer.on('connection', socket => {
 
 
 
-app.use('/', views);
-app.use('/api/products', prodRouter);
-app.use('/api/carts', cartsRouter);
 
 
 
