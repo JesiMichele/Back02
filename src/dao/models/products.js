@@ -1,8 +1,8 @@
 import { Schema, model } from 'mongoose';
 
-const newCollection = 'Producto';
+const newCollection = 'Producto';//coleccion mongoDB
 
-const ProductoSchema = new Schema({
+const ProductoSchema = new Schema({//esquema de la coleccion con sus valores
 
     title: { type: String, required: [true, 'El titulo es obligatorio'] },
     description: { type: String, required: [true, 'La descripcion del producto es obligatoria'] },
@@ -14,7 +14,7 @@ const ProductoSchema = new Schema({
     status: { type: Boolean, default: true },
 });
 
-ProductoSchema.set('toJSON', {
+ProductoSchema.set('toJSON', {//eliminar campo_v
     transform: function (doc, ret) {
         delete ret.__v;
         return ret;

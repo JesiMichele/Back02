@@ -9,4 +9,4 @@ export const dbConecction = async () => {
         console.log(`Error en la bd ${error}`);
         process.exit(1)
     }
-}
+}//Conexion a BD de MongoDb utilizando Mongoose

@@ -1,8 +1,8 @@
 import { Schema, model } from 'mongoose';
 
-const newCollection = 'Carts';
+const newCollection = 'Carts';//coleccion mongo DB
 
-const CartSchema = new Schema({
+const CartSchema = new Schema({//esquema dd la coleccion y sus valores
 
     products: [{
 

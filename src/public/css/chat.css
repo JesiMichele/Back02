@@ -6,6 +6,7 @@
     padding: 5px 10px;
     border-radius: 5px;
     margin-bottom: 5px;
+    width: 30%;
 }
 
 /* Estilos para los mensajes de otros usuarios */
@@ -16,11 +17,12 @@
     padding: 5px 10px;
     border-radius: 5px;
     margin-bottom: 5px;
+    width: 30%;
 }
 
 /* Estilos para el campo de entrada de texto */
 #chatBox {
-    width: calc(100% - 20px);
+    width: calc(50% - 20px);
     padding: 10px;
     border: 1px solid #3d3232;
     border-radius: 5px;
