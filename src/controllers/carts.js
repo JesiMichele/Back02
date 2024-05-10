@@ -58,22 +58,22 @@ export const addProductCart = async (req = request, res = response) => {
     }
 }
 
-export const deleteProductsInCart= async (req = request, res = response)=>{
-    try{
-     const{cid, pid}=req.params;
-     const ProdCart= await CartModel.findByIdAndUpdate(cid,{$pull:{'products':{id:pid}}},{new: true});
+export const deleteProductsInCart = async (req = request, res = response) => {
+    try {
+        const { cid, pid } = req.params;
+        const ProdCart = await CartModel.findByIdAndUpdate(cid, { $pull: { 'products': { id: pid } } }, { new: true });
 
-     if (ProdCart) {
-        // Operación exitosa: El producto se eliminó del carrito
-        return res.status(200).json({ success: true, message: 'Producto eliminado del carrito con éxito', ProdCart });
-    
-        
-    } else {
-        // No se encontró el carrito o el producto en el carrito
-        return res.status(404).json({ success: false, message: 'El producto no se encontró en el carrito' });
-    }
-    
-    }catch (error){
+        if (ProdCart) {
+            //  El producto se eliminó del carrito
+            return res.status(200).json({ success: true, message: 'Producto eliminado del carrito con éxito', ProdCart });
+
+
+        } else {
+            // No se encontró el carrito o el producto en el carrito
+            return res.status(404).json({ success: false, message: 'El producto no se encontró en el carrito' });
+        }
+
+    } catch (error) {
         console.log('deleteProductsInCart ->', error);
         return res.status(500).json({ msg: 'Comunicarse con un administrador' });
     }
@@ -94,7 +94,7 @@ export const updateCart = async (req = request, res = response) => {
         // Actualizar el contenido del carrito con el nuevo arreglo de productos
         cart.products = products;
 
-        // Guardar los cambios
+
         await cart.save();
 
         return res.status(200).json({ msg: 'Carrito actualizado exitosamente' });
@@ -111,9 +111,9 @@ export const updateProductQuantityInCart = async (req = request, res = response)
         const { quantity } = req.body;
         //console.log('Valor de pid:', pid);
         //console.log('Valor de quantity:', quantity);
-        
 
-         //Verificar si el carrito existe
+
+        //Verificar si el carrito existe
         const cart = await CartModel.findById(cid);
         if (!cart) {
             return res.status(404).json({ msg: `El carrito con ID ${cid} no existe` });
@@ -169,7 +169,7 @@ export const deleteAllProductsInCart = async (req = request, res = response) => 
         // Establecer el arreglo de productos del carrito como vacío
         cart.products = [];
 
-        // Guardar los cambios
+
         await cart.save();
 
         return res.status(200).json({ msg: 'Todos los productos del carrito han sido eliminados exitosamente' });

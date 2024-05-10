@@ -1,4 +1,4 @@
-import { request, response } from "express";
+//import { request, response } from "express";
 import { productModel } from "../dao/models/products.js";
 
 
@@ -6,9 +6,9 @@ import { productModel } from "../dao/models/products.js";
 // obtener una lista de productos. Utiliza la paginación para devolver un número específico de productos por página
 //page para paginacion, sort para asc o desc, query para filtrado
 
-export const getProducts = async (req = request, res = response) => {
+export const getProducts = async ({limit = 10, page = 10, sort, query}) => {
     try {
-        let { limit = 2, page = 1, sort, query } = req.query;
+        //let { limit = 10, page = 1, sort, query } = req.query;
         page = page === 0 ? 1 : page;// Paginacion
         page = Number(page);
         limit = Number(limit);
@@ -49,21 +49,11 @@ export const getProducts = async (req = request, res = response) => {
             payload: productos,
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        return res.json({ b });//Se devuelve una respuesta JSON con los detalles de paginación y la lista de productos obtenida.
+        
+      
+        return b;
+        
+        
 
 
     } catch (error) {

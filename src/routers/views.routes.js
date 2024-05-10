@@ -1,5 +1,6 @@
 import express from 'express'
 import { productModel } from '../dao/models/products.js';
+import { getProducts } from '../controllers/products.js';
 
 
 const router = express.Router();
@@ -23,6 +24,22 @@ router.get('/realtimeproducts', (req, res) => {
 router.get('/chat', (req, res) => {
 
     return res.render('chat', { styles: 'chat.css', title: 'Chat' });
+});
+
+
+/*router.get('/products',async (req, res) => {
+    const result= await getProducts({...req.query});
+    return res.render('products', {title: 'Productos', result});
+});*/
+
+router.get('/products', async (req, res) => {
+    try {
+        const result = await getProducts({ ...req.query });
+        return res.render('products', { title: 'Productos', result });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ msg: 'Comunicarse con un administrador' });
+    }
 });
 
 
