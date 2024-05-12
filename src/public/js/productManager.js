@@ -1,10 +1,65 @@
-//import { request, response } from "express";
-import { productModel } from "../dao/models/products.js";
+import { request, response } from "express";
+import { productModel } from "../../dao/models/products.js";
+import mongoose from 'mongoose';
+import mongoosePaginate from 'mongoose-paginate-v2';
+
+// Aplicar el plugin de paginación a tu modelo de producto
+//productModel.plugin(mongoosePaginate);
+
+/*export const getProducts = async (req = request, res = response) => {
+    try {
+        
+        let { limit = 10, page = 1, sort, query } = req.query;
+        page = page === 0 ? 1 : page; // Paginación
+        page = Number(page);
+        limit = Number(limit);
+        
+        // Opciones de paginación
+        const options = {
+            page: page,
+            limit: limit
+        };
+
+        // Ordenamiento
+        const sortOrder = { 'asc': 1, 'desc': -1 };
+        sort = sortOrder[sort] || null;
+        if (sort) {
+            options.sort = { price: sort };
+        }
+
+        // Filtrado
+        try {
+            if (query) {
+                query = JSON.parse(decodeURIComponent(query));
+            }
+        } catch (error) {
+            query = {};
+        }
+
+        // Realizar la consulta utilizando la paginación de Mongoose
+        const result = await productModel.paginate(query, options);
+
+        // Calcular hasNextPage y hasPrevPage
+        const hasNextPage = result.page < result.totalPages;
+        const hasPrevPage = result.page > 1;
+
+        // Retornar resultado con información adicional
+        return {
+            hasNextPage: hasNextPage,
+            hasPrevPage: hasPrevPage,
+            limit: limit,
+            sort: sort,
+            skip: (page - 1) * limit,
+            payload: productos,
+            ...result
+        };
+    } catch (error) {
+        console.log('getProducts ->', error);
+        return res.status(500).json({ msg: 'Comunicarse con un administrador' });
+    }
+}*/
 
 
-
-// obtener una lista de productos. Utiliza la paginación para devolver un número específico de productos por página
-//page para paginacion, sort para asc o desc, query para filtrado
 
 export const getProducts = async ({limit = 10, page = 10, sort, query}) => {
     try {
@@ -61,6 +116,7 @@ export const getProducts = async ({limit = 10, page = 10, sort, query}) => {
         return res.status(500).json({ msg: 'Comunicarse con un administrador' });
     }
 }
+
 
 
 //obtener prod por su ID
