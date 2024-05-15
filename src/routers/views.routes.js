@@ -1,10 +1,10 @@
 import express from 'express'
 import { productModel } from '../dao/models/products.js';
-//import {cartsManager} from '../public/js/cartsManager.js'
-//import {productManager} from '../public/js/productManager.js'
+import { ManagerMon } from '../dao/managerMon.js/managerMon.js';
 
-//const productManager= new productManager()
-//const cartsManager= new cartsManager()
+
+
+
 
 const router = express.Router();
 
@@ -30,10 +30,21 @@ router.get('/chat', (req, res) => {
 });
 
 
-/*router.get('/products',async (req, res) => {
-    const result= await getProducts({...req.query});
-    return res.render('products', {title: 'Productos', result});
-});*/
+
+
+
+const  productManager = new ManagerMon()
+router.get('/products', async (req, res) => {
+
+    let {pagina} = req.query
+    if(!pagina) pagina = 1
+
+    let {docs:productos,totalPages,hasPrevPage,hasNextPage,prevPage,nextPage} = await productManager.getAllPaginate(pagina)
+    console.log(productos)
+    res.setHeader('Content-Type', 'text/html')
+    res.status(200).render('products',{productos,totalPages,hasPrevPage,hasNextPage,prevPage,nextPage})
+})
+
 
 /*router.get('/products', async (req, res) => {
     let carrito= await cartsManager.getOneBy();

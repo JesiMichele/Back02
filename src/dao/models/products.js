@@ -1,5 +1,6 @@
 import { Schema, model } from 'mongoose';
-import mongoosePaginate from 'mongoose-paginate-v2';
+import paginate from "mongoose-paginate-v2";
+import mongoose from 'mongoose';
 
 const newCollection = 'Producto';//coleccion mongoDB
 
@@ -22,5 +23,5 @@ ProductoSchema.set('toJSON', {//eliminar campo_v
     }
 })
 
-ProductoSchema.plugin(mongoosePaginate);
-export const productModel = model(newCollection, ProductoSchema);
+ProductoSchema.plugin(paginate);
+export const productModel = mongoose.model(newCollection, ProductoSchema);

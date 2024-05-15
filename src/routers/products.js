@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { addProduct, deleteProduct, getProductById, getProducts, updateProduct }from '../public/js/productManager.js';
+import { addProduct, deleteProduct, getProductById, getProducts, updateProduct } from '../public/js/ProductUtility.js';
 //import ProductManager from '../ProductManager.js'
 
 
