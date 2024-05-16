@@ -1,4 +1,4 @@
-import { productModel } from "../models/products.js"
+import { productModel } from "./products.js"
 
 
 export class ManagerMon {

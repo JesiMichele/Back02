@@ -3,7 +3,7 @@ import { productModel } from "../../dao/models/products.js";
 
 export const getProducts = async (req = request, res = response) => {
     try {
-        
+
         let { limit = 10, page = 1, query, sort } = req.query;
         limit = Number(limit);
         page = Number(page);//paginacion
@@ -11,8 +11,8 @@ export const getProducts = async (req = request, res = response) => {
         // Filtrado
         const filt = {};
         if (query) {
-            
-            filt.category = query; 
+
+            filt.category = query;
         }
 
         // Ordenamiento

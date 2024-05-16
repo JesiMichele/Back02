@@ -1,61 +1,63 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
 </head>
-<body> 
+
+<body>
     <h1>Listado de Productos</h1>
-      <input type="text" value="{{carrito._id}}" id="carrito">
+    <input type="text" value="{{carrito._id}}" id="carrito">
     {{#each productos}}
-        <div class="product-container">
-          
-            <h2>{{title}}</h2>
-            <p>Precio: ${{price}}</p>
-            <p>Stock: {{stock}}</p>
-            <button onclick="comprar('{{_id}}')">Agregar al carrito</button>
-        </div>
+    <div class="product-container">
+
+        <h2>{{title}}</h2>
+        <p>Precio: ${{price}}</p>
+        <p>Stock: {{stock}}</p>
+        <button onclick="comprar('{{_id}}')">Agregar al carrito</button>
+    </div>
     {{/each}}
-        
+
     </script>
     {{#if totalPages}}
-        <ul class="pagination">
-            {{#if hasPrevPage}}
-                <li><a href="/products?pagina=1">&laquo; Primer</a></li>
-                <li><a href="/products?pagina={{prevPage}}">&laquo; Anterior</a></li>
-            {{else}}
-                <li class="disabled"><span>&laquo; Primer</span></li>
-                <li class="disabled"><span>&laquo; Anterior</span></li>
-            {{/if}}
-            
-            {{#each totalPages}}
-                {{#ifCond this ../currentPage}}
-                    <li class="active"><span>{{this}}</span></li>
-                {{else}}
-                    <li><a href="/products?pagina={{this}}">{{this}}</a></li>
-                {{/ifCond}}
-            {{/each}}
+    <ul class="pagination">
+        {{#if hasPrevPage}}
+        <li><a href="/products?pagina=1">&laquo; Primer</a></li>
+        <li><a href="/products?pagina={{prevPage}}">&laquo; Anterior</a></li>
+        {{else}}
+        <li class="disabled"><span>&laquo; Primer</span></li>
+        <li class="disabled"><span>&laquo; Anterior</span></li>
+        {{/if}}
 
-            {{#if hasNextPage}}
-                <li><a href="/products?pagina={{nextPage}}">Siguiente &raquo;</a></li>
-                <li><a href="/products?pagina={{totalPages}}">Última &raquo;</a></li>
-            {{else}}
-                <li class="disabled"><span>Siguiente &raquo;</span></li>
-                <li class="disabled"><span>Última &raquo;</span></li>
-            {{/if}}
-        </ul>
+        {{#each totalPages}}
+        {{#ifCond this ../currentPage}}
+        <li class="active"><span>{{this}}</span></li>
+        {{else}}
+        <li><a href="/products?pagina={{this}}">{{this}}</a></li>
+        {{/ifCond}}
+        {{/each}}
+
+        {{#if hasNextPage}}
+        <li><a href="/products?pagina={{nextPage}}">Siguiente &raquo;</a></li>
+        <li><a href="/products?pagina={{totalPages}}">Última &raquo;</a></li>
+        {{else}}
+        <li class="disabled"><span>Siguiente &raquo;</span></li>
+        <li class="disabled"><span>Última &raquo;</span></li>
+        {{/if}}
+    </ul>
     {{else}}
-        <p>No hay productos disponibles.</p>
+    <p>No hay productos disponibles.</p>
     {{/if}}
-    
-    
-        
-    </body>
 
 
-    <script src="/js/ProductUtility.js"></script>
-    <script src="/js/cartsManager.js"></script>
 
-    </html>
+</body>
+
+
+<script src="/js/ProductUtility.js"></script>
+<script src="/js/cartsManager.js"></script>
+<script src="/js/productos.js"></script>
+
+</html>
