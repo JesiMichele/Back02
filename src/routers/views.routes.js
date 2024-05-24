@@ -101,11 +101,11 @@ router.get("/carrito/:cid", async (req, res) => {
 
 router.get('/', (req, res) => {
 
-    res.status(200).render('home', { login: req.session.usuario })
+    res.status(200).render('login', { login: req.session.usuario })
 })
 
 
-router.get('/login', (req, res) => {
+router.get('/login', (req, res, next) => {
     if (req.session.usuario) {
         return res.redirect('/perfil')
     }
@@ -119,8 +119,9 @@ router.get('/login', (req, res) => {
 })
 
 
+
 //Ruta Registro
-router.get('/registro', (req, res) => {
+router.get('/registro', (req, res, next) => {
 
     if (req.session.usuario) {
         return res.redirect('/perfil')

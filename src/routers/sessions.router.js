@@ -2,13 +2,23 @@ import { Router } from "express";
 import { UsuariosManagerMongo } from "../public/js/UsuariosManager.js";
 import { generaHash } from "../utils.js";
 import { CartManager } from "../dao/CartManager.js";
+import passport from "passport";
 //import * as cartsManager from "../public/js/cartsManager.js"
 
 
 export const router = Router();
 
 const usuariosManager = new UsuariosManagerMongo();
-const cartManager=new CartManager()
+const cartManager=new CartManager();
+
+
+router.get('/error', (req, res)=>{
+    res.setHeader('Content-Type', 'aplication/json');
+    return res.status(500).json({error:"Error en la operacion "})
+})
+router.post('/registro', passport.authenticate("registro",{failureRedirect: "/api/sessions/error"}),(req,res)=>{
+
+})
 
 router.post('/registro', async (req, res) => {
 
@@ -53,9 +63,10 @@ router.post('/registro', async (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
-    let { email, password } = req.body
+    let { email, password , web} = req.body
 
     console.log(req.body)
+
     if (!email || !password)
     if(web){
         return res.redirect(`/login?error=Complete email, y password`)

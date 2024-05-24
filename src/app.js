@@ -1,6 +1,8 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import sessions from "express-session";
+import { initPassport } from "./config/passport.config.js";
+import passport from "passport";
 import __dirname from "./utils.js";
 import { engine } from "express-handlebars";
 import { Server } from 'socket.io';
@@ -29,6 +31,10 @@ app.use(sessions({
     secret: "CoderCoder123",
     resave: true, saveUninitialized:true
 }));
+
+initPassport();
+app.use (passport.initialize());
+app.use(passport.session());
 
 app.engine('handlebars', engine());
 app.set('views', __dirname + '/views');

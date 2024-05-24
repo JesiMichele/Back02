@@ -3,7 +3,7 @@ import { productModel } from "./products.js"
 
 export class ManagerMon {
 
-    async getall() {
+    async getAll() {
         return await productModel.find().lean()
     }
 
